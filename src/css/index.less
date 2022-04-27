@@ -1,0 +1,70 @@
+// 颜色变量
+@bg-color: #b7d4a8;
+
+// 清除默认样式
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font: bold 20px "Courier New";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 360px;
+	height: 420px;
+	background-color: @bg-color;
+	border: 10px solid black;
+	border-radius: 10px;
+
+	.stage {
+		position: relative;
+		width: 304px;
+		height: 304px;
+		border: 2px solid black;
+		.snake {
+			position: absolute;
+			& > div {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: #000;
+				// 蛇各个部分之间间隔
+				border: 1px solid @bg-color;
+			}
+		}
+
+		.food {
+			position: absolute;
+			top: 20px;
+			left: 40px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 10px;
+			height: 10px;
+			& > div {
+				width: 4px;
+				height: 4px;
+				background-color: #000;
+				// transform: rotate(45deg);
+			}
+		}
+	}
+
+	.score-panel {
+		width: 304px;
+		display: flex;
+		justify-content: space-between;
+	}
+}
